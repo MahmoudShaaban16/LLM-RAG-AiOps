@@ -24,7 +24,7 @@ A **support ticket triage assistant**. Given an incoming support ticket, it:
 
 🧑‍💼 **PM view:** This is the shape of a realistic v1 feature — small enough to ship, but it touches retrieval, tool use, structured output, guardrails, and observability. Most "AI features" in production are variations on this pattern.
 
-🧭 **Tech lead view:** Notice what's *not* here: no fine-tuning (Module 08), no multi-agent orchestration (Module 04). Both were deliberately left out because the task doesn't need them — a good architecture review asks "what can we leave out" as much as "what do we need."
+🧭 **Tech lead view:** Notice what's *not* here: no fine-tuning (Module 08), no multi-agent orchestration (Module 04). Both were deliberately left out because the base task doesn't need them — a good architecture review asks "what can we leave out" as much as "what do we need." [`main_extended.py`](examples/capstone_app/main_extended.py) shows what adding them back looks like, *if* a measured need arises (see section 3a below).
 
 ---
 
@@ -69,6 +69,33 @@ incoming ticket --> │  Guardrail layer     │  (Module 09: wrap untrusted tex
 | 06 — Evaluation | `exercises/` asks you to build an eval set for the triage assistant |
 | 07 — LLMOps & AIOps | `log_request()` records tokens, latency, and estimated cost for every call |
 | 09 — Security & Responsible AI | Retrieved articles and ticket text are wrapped in `<untrusted_input>` tags with explicit handling instructions |
+
+---
+
+## 3a. The extended version: adding back Modules 04 and 08
+
+[`main_extended.py`](examples/capstone_app/main_extended.py) builds on
+`main.py` and adds the two modules left out of the base capstone:
+
+- **Module 04 (Multi-Agent Systems):** the triage agent acts as a
+  **supervisor**. When it flags a billing ticket for human review, it hands
+  off to a **billing specialist worker agent** (`escalate_to_billing_specialist()`)
+  with its own narrow system prompt, the refund policy, and a
+  `submit_billing_review` tool. The worker's decision (refund recommended?
+  revised response?) is attached to the triage result.
+- **Module 08 (Fine-Tuning):** after a batch of tickets is processed,
+  `fine_tuning_recommendation()` runs the category distribution through the
+  Module 08 decision framework — if one category dominates at volume, it
+  flags that as worth evaluating for fine-tuning (after confirming
+  prompting + RAG hasn't closed the gap); otherwise it recommends staying
+  with prompting + RAG.
+
+🧭 **Tech lead view:** This is the point of the exercise — `main.py` is the
+right architecture for the *stated* scope, and `main_extended.py` is what you
+add **only when a specific, measured need appears** (a recurring billing
+dispute volume that needs specialist handling, or a category large enough to
+justify fine-tuning). Shipping the extended version from day one would be
+premature complexity.
 
 ---
 
