@@ -41,6 +41,7 @@ Throughout the explanations, look for these callouts:
 | 08 | [Fine-Tuning](modules/08-fine-tuning/README.md) | ✅ Complete | When to fine-tune vs. prompt, data prep, evaluation |
 | 09 | [Security & Responsible AI](modules/09-security-and-responsible-ai/README.md) | ✅ Complete | Prompt injection, data privacy, guardrails, governance |
 | 10 | [Production Capstone](modules/10-production-capstone/README.md) | ✅ Complete | End-to-end project combining RAG + agents + evaluation + ops |
+| 11 | [Self-Hosted Inference with vLLM](modules/11-self-hosted-inference-vllm/README.md) | ✅ Complete | Open-weight models, vLLM serving, API vs. self-hosted tradeoffs |
 
 ## Getting Started
 
