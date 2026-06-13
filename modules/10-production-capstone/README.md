@@ -1,29 +1,96 @@
 # Module 10 — Production Capstone
 
-> Status: 🚧 Planned — structure below shows what this module will contain.
+> **Goal:** Combine everything from Modules 01–09 into a single, small-but-complete application: a support-ticket assistant that retrieves relevant docs (RAG), uses tools (agent), is guarded against prompt injection, and is evaluated and observed like a production service.
 
-## What you'll build
+## Contents
 
-A complete, production-shaped application that combines concepts from every prior module:
+- [1. What we're building](#1-what-were-building)
+- [2. Architecture](#2-architecture)
+- [3. How each module shows up here](#3-how-each-module-shows-up-here)
+- [4. Running the capstone](#4-running-the-capstone)
+- [5. Where to go next](#5-where-to-go-next)
 
-- **RAG** (Module 02) over a sample document set
-- **An agent** (Module 03) that can use tools (e.g., search the knowledge base, call an API)
-- **Evaluation harness** (Module 06) with a test set and pass/fail criteria
-- **Observability** (Module 07): request logging, cost tracking, basic dashboards
-- **Guardrails** (Module 09): input validation and tool-access restrictions
+---
 
-🧑‍💼 **PM view:** This module is the reference for "what does a real project plan look like" — use it to scope similar efforts: what's the MVP, what's the evaluation/QA step, what's the ops/monitoring step.
+## 1. What we're building
 
-🧭 **Tech lead view:** This is intentionally a synthesis, not new concepts — if any part feels unfamiliar, that's a signal to revisit the corresponding module before starting.
+A **support ticket triage assistant**. Given an incoming support ticket, it:
 
-## Planned contents
+1. Retrieves relevant help-center articles (RAG — Module 02) using a small in-memory vector index (Module 05)
+2. Decides whether it can answer directly or needs to call a tool (Module 03) — e.g., `check_order_status`
+3. Produces a structured triage result: category, urgency, suggested response, and whether a human needs to review it
+4. Runs through a guardrail layer that treats retrieved/tool content as untrusted (Module 09)
+5. Logs cost/latency for observability (Module 07)
+
+🧑‍💼 **PM view:** This is the shape of a realistic v1 feature — small enough to ship, but it touches retrieval, tool use, structured output, guardrails, and observability. Most "AI features" in production are variations on this pattern.
+
+🧭 **Tech lead view:** Notice what's *not* here: no fine-tuning (Module 08), no multi-agent orchestration (Module 04). Both were deliberately left out because the task doesn't need them — a good architecture review asks "what can we leave out" as much as "what do we need."
+
+---
+
+## 2. Architecture
 
 ```
-modules/10-production-capstone/
-├── README.md
-├── presentation/slides.md
-├── examples/
-│   └── capstone_app/         # A small but complete RAG + agent application
-└── exercises/
-    └── extend_the_capstone.md  # Suggested extensions (new tools, new data sources, etc.)
+                    ┌─────────────────────┐
+incoming ticket --> │  Guardrail layer     │  (Module 09: wrap untrusted text in
+                    │  (input wrapping)    │   delimited tags before it reaches the model)
+                    └──────────┬──────────┘
+                               │
+                    ┌──────────▼──────────┐
+                    │  Retrieval (RAG)     │  (Module 02 + 05: TF-IDF / embedding
+                    │  over help articles  │   search over a small KB)
+                    └──────────┬──────────┘
+                               │ relevant articles
+                    ┌──────────▼──────────┐
+                    │  Claude + tools      │  (Module 03: tool_choice may call
+                    │  (triage agent)      │   check_order_status)
+                    └──────────┬──────────┘
+                               │ structured tool_use result
+                    ┌──────────▼──────────┐
+                    │  Guardrail layer     │  (Module 09: validate tool calls,
+                    │  (output validation) │   flag if human review required)
+                    └──────────┬──────────┘
+                               │
+                    ┌──────────▼──────────┐
+                    │  Cost/latency log    │  (Module 07: observability)
+                    └──────────────────────┘
 ```
+
+---
+
+## 3. How each module shows up here
+
+| Module | Where it appears in the capstone |
+|---|---|
+| 01 — Fundamentals & Prompting | The system prompt, structured-output tool schema, and model choice (`claude-sonnet-4-6`) |
+| 02 — RAG Systems | `retrieve_relevant_articles()` — TF-IDF retrieval over a small help-center knowledge base |
+| 03 — AI Agents | The triage call exposes a `check_order_status` tool; the model decides whether to call it |
+| 05 — Vector DBs & Embeddings | The retrieval index is the same "in-memory similarity search" pattern from Module 05 |
+| 06 — Evaluation | `exercises/` asks you to build an eval set for the triage assistant |
+| 07 — LLMOps & AIOps | `log_request()` records tokens, latency, and estimated cost for every call |
+| 09 — Security & Responsible AI | Retrieved articles and ticket text are wrapped in `<untrusted_input>` tags with explicit handling instructions |
+
+---
+
+## 4. Running the capstone
+
+```bash
+cd modules/10-production-capstone/examples/capstone_app
+pip install -r requirements.txt
+export ANTHROPIC_API_KEY=sk-ant-...
+python main.py
+```
+
+This runs a few sample tickets through the full pipeline and prints, for each: the retrieved articles, the model's structured triage decision, any tool calls made, and the logged cost/latency.
+
+🧑‍💻 **Engineer view:** Read [`examples/capstone_app/main.py`](examples/capstone_app/main.py) top to bottom — it's intentionally a single file (~150 lines) so you can see the whole pipeline without jumping between modules. In a real codebase you'd split retrieval, guardrails, and logging into separate modules.
+
+---
+
+## 5. Where to go next
+
+- 📊 [Presentation slides](presentation/slides.md) — walk through the architecture with your team
+- 💻 [`examples/capstone_app/`](examples/capstone_app/) — the full application
+- ✏️ [Exercises](exercises/) — extend the capstone (add a new tool, build an eval set, add a new guardrail)
+
+If you've worked through Modules 01–09, this module should feel like a synthesis, not new material. If any part feels unfamiliar, that's a signal to revisit the corresponding module.
