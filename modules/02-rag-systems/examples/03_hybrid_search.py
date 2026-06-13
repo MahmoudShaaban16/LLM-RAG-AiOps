@@ -141,10 +141,10 @@ def main() -> None:
     print(
         "\nNote: doc1 matches strongly on the exact error code 'E4042' "
         "(keyword search), while doc2 matches on the paraphrased meaning "
-        "'card gets rejected' (semantic search). A pure keyword search "
-        "might miss doc2 entirely; a pure semantic search might rank doc1 "
-        "lower because 'E4042' is just a rare token to it. Hybrid search "
-        "surfaces both."
+        "'card gets rejected' (semantic search). Both signals contribute to "
+        "the hybrid score, so both doc1 and doc2 rank highly -- whereas a "
+        "search using only one signal could plausibly miss one of them "
+        "depending on exact term overlap and corpus size."
     )
 
 

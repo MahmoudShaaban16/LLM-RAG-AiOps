@@ -36,10 +36,10 @@ Throughout the explanations, look for these callouts:
 | 03 | [AI Agents](modules/03-ai-agents/README.md) | ✅ Complete | Tool use, agentic loops, planning & execution |
 | 04 | [Multi-Agent Systems](modules/04-multi-agent-systems/README.md) | ✅ Complete | Orchestration patterns, agent-to-agent communication |
 | 05 | [Vector Databases & Embeddings](modules/05-vector-databases-embeddings/README.md) | ✅ Complete | Embedding models, vector stores, similarity search |
-| 06 | [LLM Evaluation & Testing](modules/06-llm-evaluation-and-testing/README.md) | 🚧 Planned | Benchmarks, LLM-as-judge, regression testing for prompts |
-| 07 | [LLMOps & AIOps](modules/07-llmops-and-aiops/README.md) | 🚧 Planned | Deployment, monitoring, cost management, observability |
-| 08 | [Fine-Tuning](modules/08-fine-tuning/README.md) | 🚧 Planned | When to fine-tune vs. prompt, data prep, evaluation |
-| 09 | [Security & Responsible AI](modules/09-security-and-responsible-ai/README.md) | 🚧 Planned | Prompt injection, data privacy, guardrails, governance |
+| 06 | [LLM Evaluation & Testing](modules/06-llm-evaluation-and-testing/README.md) | ✅ Complete | Benchmarks, LLM-as-judge, regression testing for prompts |
+| 07 | [LLMOps & AIOps](modules/07-llmops-and-aiops/README.md) | ✅ Complete | Deployment, monitoring, cost management, observability |
+| 08 | [Fine-Tuning](modules/08-fine-tuning/README.md) | ✅ Complete | When to fine-tune vs. prompt, data prep, evaluation |
+| 09 | [Security & Responsible AI](modules/09-security-and-responsible-ai/README.md) | ✅ Complete | Prompt injection, data privacy, guardrails, governance |
 | 10 | [Production Capstone](modules/10-production-capstone/README.md) | ✅ Complete | End-to-end project combining RAG + agents + evaluation + ops |
 
 ## Getting Started
