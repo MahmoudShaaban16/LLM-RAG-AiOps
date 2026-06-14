@@ -43,6 +43,7 @@ Throughout the explanations, look for these callouts:
 | 10 | [Production Capstone](modules/10-production-capstone/README.md) | ✅ Complete | End-to-end project combining RAG + agents + evaluation + ops |
 | 11 | [Self-Hosted Inference with vLLM](modules/11-self-hosted-inference-vllm/README.md) | ✅ Complete | Open-weight models, vLLM serving, API vs. self-hosted tradeoffs |
 | 12 | [Model Context Protocol (MCP)](modules/12-model-context-protocol/README.md) | ✅ Complete | MCP architecture, building/connecting MCP servers, vs. inline tool use |
+| 13 | [AI Use Cases & Project Management for PMs](modules/13-ai-use-cases-for-pms/README.md) | ✅ Complete | Spotting/scoring AI use cases, one-pagers, scoping with engineering, rollout & metrics |
 
 ## Getting Started
 
