@@ -61,3 +61,25 @@ Using the hybrid search pattern from
 3. **Bonus:** Which `alpha` would you pick for a support bot where users
    often type exact error codes? Which would you pick for a bot answering
    conceptual "how does X work" questions? Does one `alpha` work for both?
+
+---
+
+## Exercise 4: Multimodal RAG - text and image descriptions in one index
+
+**File:** [`exercise_04_multimodal_rag.py`](exercise_04_multimodal_rag.py)
+
+A small knowledge base mixes text passages with images (a diagram and a
+chart), each represented by a caption a vision model would have generated
+at ingestion time.
+
+1. Implement `build_index(corpus)` to build a single TF-IDF index over each
+   item's text (text items) or caption (image items).
+2. Implement `search(query, corpus, vectorizer, matrix, k)` to return the
+   top-k items by cosine similarity.
+3. Run the three provided queries and confirm that a query about a
+   "diagram" or "chart" retrieves the corresponding image item, while a
+   query answerable from prose retrieves a text item.
+
+**Think about:** What's the tradeoff of captioning images once at ingestion
+time (this exercise's approach) vs. calling a vision model at *query* time
+for every retrieved image?

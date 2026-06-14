@@ -66,3 +66,29 @@ human to sign off.
    adds it to the approval queue (for requires-approval) — printing what
    happened in each case.
 4. Test with at least 2 refund amounts: one under $50, one over.
+
+---
+
+## Exercise 4: Guardrails for a computer-use / voice agent
+
+**File:** [`exercise_04_computer_use_guardrail.py`](exercise_04_computer_use_guardrail.py)
+
+A computer-use agent perceives its environment (screen content, transcribed
+voice) and takes actions (click, type, open apps). This adds two new risks
+on top of Exercises 1-3: actions with real-world side effects, and untrusted
+content arriving via pixels or audio instead of pasted text.
+
+1. Implement `classify_action(action, params)` using `ACTION_RISK` to return
+   `"allow"`, `"approval"`, or `"block"` (default to `"block"` for unknown
+   actions).
+2. Implement `detect_injected_instruction(observed_text)` to flag on-screen
+   or transcribed text that looks like it's trying to redirect the agent,
+   using `INJECTION_MARKERS`.
+3. Implement `handle_step(action, params, observed_text)` that checks for
+   injected instructions *first*, then classifies the action.
+4. Run the provided `STEPS` and confirm `submit_payment_form` is blocked
+   outright, and that a click with an injected-instruction tooltip is
+   blocked even though "click" is normally low-risk.
+
+**Think about:** Why does `detect_injected_instruction` need to run before
+`classify_action`, rather than after?
