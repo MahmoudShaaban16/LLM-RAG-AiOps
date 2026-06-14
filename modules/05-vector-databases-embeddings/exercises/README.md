@@ -7,6 +7,10 @@ These exercises use [`sentence-transformers`](https://www.sbert.net/) (the
 `all-MiniLM-L6-v2` model) and `numpy`, the same as `examples/`. No API key
 is required.
 
+> **Not coding this module?** [`pm_track.md`](pm_track.md) covers the same
+> decisions (embedding model choice, exact vs. approximate search, and vector
+> store tradeoffs) as a written exercise — no code required.
+
 ```bash
 pip install -r ../examples/requirements.txt
 ```

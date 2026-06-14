@@ -10,6 +10,7 @@
 - [4. Choosing a model](#4-choosing-a-model)
 - [5. Prompt engineering fundamentals](#5-prompt-engineering-fundamentals)
 - [6. Common failure modes](#6-common-failure-modes)
+- [Tools & Resources](#tools--resources)
 - [Hands-on](#hands-on)
 
 ---
@@ -141,9 +142,28 @@ Treat prompts as versioned artifacts: write a test set of representative inputs,
 
 ---
 
+## Tools & Resources
+
+🧑‍💻 **Engineer view — SDKs & libraries**
+
+| Tool / Library | What it's for |
+|---|---|
+| [Anthropic Python SDK](https://github.com/anthropics/anthropic-sdk-python) | `client.messages.create(...)` and `client.messages.count_tokens(...)` — the API surface used in this module's examples |
+| [Anthropic Cookbook](https://github.com/anthropics/anthropic-cookbook) | Worked examples of prompting techniques, structured output, and token-usage patterns |
+| [tiktoken](https://github.com/openai/tiktoken) / model tokenizers | Useful for building intuition about how text splits into tokens, even when working primarily with Claude |
+
+📚 **Further reading**
+
+- [Anthropic — Prompt engineering overview](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview) — official guidance on the techniques in Section 5
+- [Anthropic — Models overview & pricing](https://docs.anthropic.com/en/docs/about-claude/models) — current context windows, output limits, and per-token pricing
+
+🧑‍💼 **PM view:** If coding the examples isn't practical for your role, see [`exercises/pm_track.md`](exercises/pm_track.md) for a no-code exercise covering the same decisions (token/cost estimation, model selection, and prompt design) using a worked scenario.
+
+---
+
 ## Hands-on
 
 Continue to:
 - 📊 [Presentation slides](presentation/slides.md) — a workshop-ready deck covering this module
 - 💻 [Code examples](examples/) — runnable scripts demonstrating tokens, context, prompting, and structured output
-- ✏️ [Exercises](exercises/) — practice problems with starter code and solutions
+- ✏️ [Exercises](exercises/) — practice problems with starter code and solutions (including a non-coding [PM track](exercises/pm_track.md))

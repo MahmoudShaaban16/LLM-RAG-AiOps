@@ -10,6 +10,7 @@
 - [4. Indexing strategies: exact vs. approximate](#4-indexing-strategies-exact-vs-approximate)
 - [5. Embeddings, RAG, and semantic search](#5-embeddings-rag-and-semantic-search)
 - [6. Common failure modes](#6-common-failure-modes)
+- [Tools & Resources](#tools--resources)
 - [Hands-on](#hands-on)
 
 ---
@@ -164,9 +165,29 @@ Both depend entirely on embedding quality and index freshness: if the embeddings
 
 ---
 
+## Tools & Resources
+
+🧑‍💻 **Engineer view — SDKs & libraries**
+
+| Tool / Library | What it's for |
+|---|---|
+| [Voyage AI embeddings](https://docs.voyageai.com/docs/embeddings) | Anthropic's recommended embedding models for retrieval and RAG |
+| [sentence-transformers](https://www.sbert.net/) | Open-source embedding models (e.g., `all-MiniLM-L6-v2`) — used in this module's examples |
+| [Chroma](https://docs.trychroma.com/) | Lightweight embedded/self-hosted vector database, easy to start with |
+| [FAISS](https://github.com/facebookresearch/faiss) | Meta's library for efficient similarity search and ANN indexing at scale |
+
+📚 **Further reading**
+
+- [Anthropic — Embeddings guide](https://docs.anthropic.com/en/docs/build-with-claude/embeddings) — overview of embeddings and recommended providers
+- [Pinecone Learning Center](https://www.pinecone.io/learn/) — accessible explanations of vector search, ANN indexes, and HNSW
+
+🧑‍💼 **PM view:** If coding the examples isn't practical for your role, see [`exercises/pm_track.md`](exercises/pm_track.md) for a no-code exercise covering the same decisions (embedding model choice, exact vs. approximate search, and vector store tradeoffs) using a worked scenario.
+
+---
+
 ## Hands-on
 
 Continue to:
 - 📊 [Presentation slides](presentation/slides.md) — a workshop-ready deck covering this module
 - 💻 [Code examples](examples/) — generate embeddings, build a numpy-based similarity search, and compare vector store options
-- ✏️ [Exercises](exercises/) — practice problems with starter code and solutions
+- ✏️ [Exercises](exercises/) — practice problems with starter code and solutions (including a non-coding [PM track](exercises/pm_track.md))

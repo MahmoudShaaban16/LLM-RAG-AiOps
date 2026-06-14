@@ -3,6 +3,10 @@
 Complete these after reading the module README and reviewing the examples.
 Solutions are in [`solutions/`](solutions/) — try each exercise yourself first.
 
+> **Not coding this module?** [`pm_track.md`](pm_track.md) covers the same
+> decisions (tool design, planning pattern, agent-vs-no-agent) as a written
+> exercise — no code required.
+
 ## Exercise 1: Add a new tool to the agentic loop
 
 **File:** [`exercise_01_add_tool.py`](exercise_01_add_tool.py)

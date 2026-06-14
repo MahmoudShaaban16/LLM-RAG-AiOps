@@ -4,6 +4,10 @@ These exercises extend [`examples/03_cost_comparison.py`](../examples/03_cost_co
 and the decision framework from the module README. None require a GPU or an
 API key.
 
+> **Not coding this module?** [`pm_track.md`](pm_track.md) covers the same
+> decisions (API vs. self-hosted, breakeven volume, and the decision
+> framework) as a written exercise — no code required.
+
 ## Exercise 1: Model the breakeven for your own workload
 
 **File:** [`exercise_01_breakeven.py`](exercise_01_breakeven.py)

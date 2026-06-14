@@ -8,6 +8,7 @@
 - [2. Architecture](#2-architecture)
 - [3. How each module shows up here](#3-how-each-module-shows-up-here)
 - [4. Running the capstone](#4-running-the-capstone)
+- [Tools & Resources](#tools--resources)
 - [5. Where to go next](#5-where-to-go-next)
 
 ---
@@ -114,10 +115,32 @@ This runs a few sample tickets through the full pipeline and prints, for each: t
 
 ---
 
+## Tools & Resources
+
+This module doesn't introduce new tools — it's a recap of the SDKs and libraries used across the capstone, drawn from earlier modules.
+
+🧑‍💻 **Engineer view — SDKs & libraries**
+
+| Tool / Library | What it's for | Where it's used in the capstone |
+|---|---|---|
+| [Anthropic Python SDK](https://github.com/anthropics/anthropic-sdk-python) | `client.messages.create(..., tools=[...])` | The triage agent's core model + tool calls (Modules 01, 03) |
+| [Anthropic Cookbook](https://github.com/anthropics/anthropic-cookbook) | Worked examples of RAG, tool use, and evaluation patterns | Reference implementation patterns behind `main.py` |
+| scikit-learn (TF-IDF) | Lightweight vector similarity for small in-memory indexes | `retrieve_relevant_articles()` (Modules 02, 05) |
+| [OWASP Top 10 for LLM Applications](https://owasp.org/www-project-top-10-for-large-language-model-applications/) | Checklist of LLM-specific vulnerabilities | Informs the guardrail layer (Module 09) |
+
+📚 **Further reading**
+
+- [Anthropic — Tool use (function calling)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use) — reference for the triage agent's tool schema
+- [Anthropic — Building effective agents](https://www.anthropic.com/research/building-effective-agents) — design principles behind the "what's *not* here" architecture decisions in Section 1
+
+🧑‍💼 **PM view:** If coding the examples isn't practical for your role, see [`exercises/pm_track.md`](exercises/pm_track.md) for a no-code exercise covering the same decisions (what to include in a v1 capstone, what to defer, and how to review an end-to-end AI feature) using a worked scenario.
+
+---
+
 ## 5. Where to go next
 
 - 📊 [Presentation slides](presentation/slides.md) — walk through the architecture with your team
 - 💻 [`examples/capstone_app/`](examples/capstone_app/) — the full application
-- ✏️ [Exercises](exercises/) — extend the capstone (add a new tool, build an eval set, add a new guardrail)
+- ✏️ [Exercises](exercises/) — extend the capstone (add a new tool, build an eval set, add a new guardrail) (including a non-coding [PM track](exercises/pm_track.md))
 
 If you've worked through Modules 01–09, this module should feel like a synthesis, not new material. If any part feels unfamiliar, that's a signal to revisit the corresponding module.

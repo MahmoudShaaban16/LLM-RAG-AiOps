@@ -10,6 +10,7 @@
 - [4. Handling model deprecations and updates](#4-handling-model-deprecations-and-updates)
 - [5. Monitoring for quality drift](#5-monitoring-for-quality-drift)
 - [6. Common failure modes](#6-common-failure-modes)
+- [Tools & Resources](#tools--resources)
 - [Hands-on](#hands-on)
 
 ---
@@ -184,9 +185,30 @@ Detecting drift requires monitoring *outputs*, not just *uptime*:
 
 ---
 
+## Tools & Resources
+
+🧑‍💻 **Engineer view — SDKs & libraries**
+
+| Tool / Library | What it's for |
+|---|---|
+| [Anthropic Python SDK](https://github.com/anthropics/anthropic-sdk-python) | `client.messages.create` — exposes `usage`, prompt caching (`cache_control`), and the fields needed for cost/latency tracking |
+| [LangSmith](https://docs.smith.langchain.com/) | Tracing, logging, and cost/latency dashboards for multi-step LLM applications |
+| [Helicone](https://docs.helicone.ai/) | Drop-in observability proxy for logging prompts, responses, token usage, and cost |
+| [OpenTelemetry](https://opentelemetry.io/docs/) | Vendor-neutral tracing standard — useful for correlating LLM call traces with the rest of your application's observability stack |
+
+📚 **Further reading**
+
+- [Anthropic — Prompt caching](https://docs.anthropic.com/en/docs/build-with-claude/prompt-caching) — official reference for `cache_control`, cache lifetimes, and the `usage` fields shown in Section 3
+- [Anthropic — Pricing](https://www.anthropic.com/pricing) — current model pricing for cost-tracking calculations
+- [Anthropic — Model deprecations](https://docs.anthropic.com/en/docs/about-claude/model-deprecations) — official deprecation timeline and policy referenced in Section 4
+
+🧑‍💼 **PM view:** If coding the examples isn't practical for your role, see [`exercises/pm_track.md`](exercises/pm_track.md) for a no-code exercise covering the same decisions (fallback strategy, what to log for cost attribution, and how to respond to quality drift) using a worked scenario.
+
+---
+
 ## Hands-on
 
 Continue to:
 - 📊 [Presentation slides](presentation/slides.md) — a workshop-ready deck covering this module
 - 💻 [Code examples](examples/) — runnable scripts demonstrating prompt caching, logging/cost tracking, and retry/fallback
-- ✏️ [Exercises](exercises/) — practice problems with starter code and solutions
+- ✏️ [Exercises](exercises/) — practice problems with starter code and solutions (including a non-coding [PM track](exercises/pm_track.md))

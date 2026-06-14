@@ -3,6 +3,11 @@
 Complete these after reading the module README and reviewing the examples.
 Solutions are in [`solutions/`](solutions/) — try each exercise yourself first.
 
+> **Not coding this module?** [`pm_track.md`](pm_track.md) covers the same
+> decisions (inline tools vs. MCP server, ownership/reuse tradeoffs, and the
+> security/allow-list considerations) as a written exercise — no code
+> required.
+
 ## Exercise 1: Add a new tool to the MCP server and confirm auto-discovery
 
 **Files:** [`exercise_01_add_server_tool.py`](exercise_01_add_server_tool.py), [`mcp_server.py`](mcp_server.py)

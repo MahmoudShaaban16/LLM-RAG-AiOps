@@ -3,6 +3,10 @@
 Complete these after reading the module README and reviewing the examples.
 Solutions are in [`solutions/`](solutions/) — try each exercise yourself first.
 
+> **Not coding this module?** [`pm_track.md`](pm_track.md) covers the same
+> decisions (fallback strategy, what to log for cost attribution, and how to
+> respond to quality drift) as a written exercise — no code required.
+
 ## Exercise 1: Add a cost budget alert
 
 **File:** [`exercise_01_cost_alert.py`](exercise_01_cost_alert.py)

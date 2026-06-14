@@ -10,6 +10,7 @@
 - [4. Evaluating a fine-tuned model vs. the base model](#4-evaluating-a-fine-tuned-model-vs-the-base-model)
 - [5. Cost and maintenance implications](#5-cost-and-maintenance-implications)
 - [6. Common failure modes](#6-common-failure-modes)
+- [Tools & Resources](#tools--resources)
 - [Hands-on](#hands-on)
 
 ---
@@ -152,9 +153,29 @@ Owning a fine-tuned model is not a one-time cost — it's an ongoing commitment:
 
 ---
 
+## Tools & Resources
+
+🧑‍💻 **Engineer view — SDKs & libraries**
+
+| Tool / Library | What it's for |
+|---|---|
+| [Hugging Face Transformers](https://github.com/huggingface/transformers) | Load, train, and run open-weight models — the base library most fine-tuning workflows build on |
+| [Hugging Face PEFT](https://github.com/huggingface/peft) | Parameter-efficient fine-tuning (e.g., LoRA) — fine-tune large models without updating every weight |
+| [Hugging Face TRL](https://github.com/huggingface/trl) | Supervised fine-tuning and RLHF-style training loops on top of Transformers |
+| [Anthropic Python SDK](https://github.com/anthropics/anthropic-sdk-python) | The same `client.messages.create` surface used in Modules 01-03 — your baseline to compare any fine-tuned model against |
+
+📚 **Further reading**
+
+- [Anthropic — Fine-tuning vs. prompting](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview) — official guidance on when prompt engineering should be tried before fine-tuning
+- [Anthropic — Models overview](https://docs.anthropic.com/en/docs/about-claude/models) — current model lineup and capabilities, useful when deciding whether a bigger/newer base model closes the gap instead
+
+🧑‍💼 **PM view:** If coding the examples isn't practical for your role, see [`exercises/pm_track.md`](exercises/pm_track.md) for a no-code exercise covering the same decisions (when fine-tuning is justified, data readiness, and before/after evaluation) using a worked scenario.
+
+---
+
 ## Hands-on
 
 Continue to:
 - 📊 [Presentation slides](presentation/slides.md) — a workshop-ready deck covering this module
 - 💻 [Code examples](examples/) — data preparation and a conceptual base-vs-specialized evaluation harness
-- ✏️ [Exercises](exercises/) — practice problems with starter code and solutions
+- ✏️ [Exercises](exercises/) — practice problems with starter code and solutions (including a non-coding [PM track](exercises/pm_track.md))

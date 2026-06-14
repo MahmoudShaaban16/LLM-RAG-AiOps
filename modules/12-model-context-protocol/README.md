@@ -11,6 +11,7 @@
 - [5. Connecting Claude to an MCP server](#5-connecting-claude-to-an-mcp-server)
 - [6. Security considerations](#6-security-considerations)
 - [7. Common failure modes](#7-common-failure-modes)
+- [Tools & Resources](#tools--resources)
 - [Hands-on](#hands-on)
 
 ---
@@ -161,9 +162,28 @@ MCP servers are **tool providers your agent grants capabilities to** — the sam
 
 ---
 
+## Tools & Resources
+
+🧑‍💻 **Engineer view — SDKs & libraries**
+
+| Tool / Library | What it's for |
+|---|---|
+| [Model Context Protocol — spec & docs](https://modelcontextprotocol.io/) | The official protocol specification, concepts, and guides referenced throughout this module |
+| [MCP Python SDK](https://github.com/modelcontextprotocol/python-sdk) | `FastMCP` for building servers and `ClientSession` for building clients — used in this module's examples |
+| [Anthropic — MCP connector](https://docs.anthropic.com/en/docs/agents-and-tools/mcp-connector) | Server-side MCP connector for the Messages API, referenced in Section 5 |
+
+📚 **Further reading**
+
+- [Anthropic — Tool use (function calling)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use) — the tool-call shape MCP tools map onto (Module 03)
+- [Model Context Protocol — specification](https://modelcontextprotocol.io/specification) — the full protocol reference for hosts, clients, servers, and transports
+
+🧑‍💼 **PM view:** If coding the examples isn't practical for your role, see [`exercises/pm_track.md`](exercises/pm_track.md) for a no-code exercise covering the same decisions (inline tools vs. an MCP server, ownership/reuse tradeoffs, and the security/allow-list considerations) using a worked scenario.
+
+---
+
 ## Hands-on
 
 Continue to:
 - 📊 [Presentation slides](presentation/slides.md) — a workshop-ready deck covering this module
 - 💻 [Code examples](examples/) — a minimal MCP server and a Claude client that connects to it
-- ✏️ [Exercises](exercises/) — practice problems with starter code and solutions
+- ✏️ [Exercises](exercises/) — practice problems with starter code and solutions (including a non-coding [PM track](exercises/pm_track.md))

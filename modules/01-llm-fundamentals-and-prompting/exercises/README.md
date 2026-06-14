@@ -3,6 +3,10 @@
 Complete these after reading the module README and reviewing the examples.
 Solutions are in [`solutions/`](solutions/) — try each exercise yourself first.
 
+> **Not coding this module?** [`pm_track.md`](pm_track.md) covers the same
+> decisions (token/cost estimation, model selection, and prompt design) as a
+> written exercise — no code required.
+
 ## Exercise 1: Estimate and verify token usage
 
 **File:** [`exercise_01_token_budget.py`](exercise_01_token_budget.py)

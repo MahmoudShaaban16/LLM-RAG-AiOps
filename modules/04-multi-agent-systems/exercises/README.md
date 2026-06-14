@@ -3,6 +3,10 @@
 Complete these after reading the module README and reviewing the examples.
 Solutions are in [`solutions/`](solutions/) — try each exercise yourself first.
 
+> **Not coding this module?** [`pm_track.md`](pm_track.md) covers the same
+> decisions (orchestration pattern choice, agent handoff design, and
+> cost/latency tradeoffs) as a written exercise — no code required.
+
 ## Exercise 1: Add a third worker to the supervisor
 
 **File:** [`exercise_01_add_worker.py`](exercise_01_add_worker.py)

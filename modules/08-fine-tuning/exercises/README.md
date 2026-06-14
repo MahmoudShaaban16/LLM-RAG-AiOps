@@ -3,6 +3,10 @@
 Complete these after reading the module README and reviewing the examples.
 Solutions are in [`solutions/`](solutions/) — try each exercise yourself first.
 
+> **Not coding this module?** [`pm_track.md`](pm_track.md) covers the same
+> decisions (when fine-tuning is justified, data readiness, and before/after
+> evaluation) as a written exercise — no code required.
+
 ## Exercise 1: Validate and format a training dataset
 
 **File:** [`exercise_01_format_dataset.py`](exercise_01_format_dataset.py)

@@ -10,6 +10,7 @@
 - [4. Cost and latency implications](#4-cost-and-latency-implications)
 - [5. Debugging multi-agent systems](#5-debugging-multi-agent-systems)
 - [6. Common failure modes](#6-common-failure-modes)
+- [Tools & Resources](#tools--resources)
 - [Hands-on](#hands-on)
 
 ---
@@ -161,11 +162,30 @@ Practical mitigations:
 
 ---
 
+## Tools & Resources
+
+🧑‍💻 **Engineer view — SDKs & libraries**
+
+| Tool / Library | What it's for |
+|---|---|
+| [Anthropic Python SDK](https://github.com/anthropics/anthropic-sdk-python) | `client.messages.create(...)` — each agent/stage is still just a Messages API call |
+| [Anthropic Cookbook](https://github.com/anthropics/anthropic-cookbook) | Worked examples of orchestration, evaluation, and multi-step workflows |
+| [LangGraph](https://langchain-ai.github.io/langgraph/) | Graph-based orchestration framework for multi-agent pipelines, supervisors, and stateful workflows |
+
+📚 **Further reading**
+
+- [Anthropic — Building effective agents](https://www.anthropic.com/research/building-effective-agents) — covers orchestration patterns including supervisor/worker, pipelines, and when (not) to use them
+- [Anthropic — Tool use (function calling)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use) — relevant for structured handoffs between agents (Section 3)
+
+🧑‍💼 **PM view:** If coding the examples isn't practical for your role, see [`exercises/pm_track.md`](exercises/pm_track.md) for a no-code exercise covering the same decisions (orchestration pattern choice, agent handoff design, and cost/latency tradeoffs) using a worked scenario.
+
+---
+
 ## Hands-on
 
 Continue to:
 - 📊 [Presentation slides](presentation/slides.md) — a workshop-ready deck covering this module
 - 💻 [Code examples](examples/) — a supervisor/worker example and a sequential pipeline of specialized agents
-- ✏️ [Exercises](exercises/) — practice problems with starter code and solutions
+- ✏️ [Exercises](exercises/) — practice problems with starter code and solutions (including a non-coding [PM track](exercises/pm_track.md))
 
 This module builds directly on [Module 03 — AI Agents](../03-ai-agents/README.md) — the agentic loop from Module 03 can itself be one "worker" or one "stage" in the patterns covered here.

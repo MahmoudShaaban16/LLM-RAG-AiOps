@@ -3,6 +3,10 @@
 These exercises extend [`examples/capstone_app/main.py`](../examples/capstone_app/main.py).
 Solutions are in [`solutions/`](solutions/) — try each exercise yourself first.
 
+> **Not coding this module?** [`pm_track.md`](pm_track.md) covers the same
+> decisions (what belongs in a v1 capstone, what to defer, and how to review
+> an end-to-end AI feature) as a written exercise — no code required.
+
 ## Exercise 1: Add a new tool
 
 **File:** [`exercise_01_add_tool.py`](exercise_01_add_tool.py)

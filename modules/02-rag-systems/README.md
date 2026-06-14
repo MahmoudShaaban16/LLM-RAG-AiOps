@@ -10,6 +10,7 @@
 - [4. Retrieval quality vs. answer quality](#4-retrieval-quality-vs-answer-quality)
 - [5. Basic vs. advanced RAG](#5-basic-vs-advanced-rag)
 - [6. Common failure modes](#6-common-failure-modes)
+- [Tools & Resources](#tools--resources)
 - [Hands-on](#hands-on)
 
 ---
@@ -161,9 +162,29 @@ Use an LLM call to rewrite or expand the user's query before retrieval — e.g.,
 
 ---
 
+## Tools & Resources
+
+🧑‍💻 **Engineer view — SDKs & libraries**
+
+| Tool / Library | What it's for |
+|---|---|
+| [Anthropic Python SDK](https://github.com/anthropics/anthropic-sdk-python) | `client.messages.create(...)` for the generation step of the RAG pipeline |
+| [LangChain](https://python.langchain.com/) | Document loaders, text splitters, and retriever abstractions for building RAG pipelines |
+| [Chroma](https://docs.trychroma.com/) / [FAISS](https://github.com/facebookresearch/faiss) | Popular open-source vector stores for embedding-based similarity search |
+| [Hugging Face — Sentence Transformers](https://www.sbert.net/) | Open-source embedding models for chunk and query vectors |
+
+📚 **Further reading**
+
+- [Anthropic — Building effective agents](https://www.anthropic.com/research/building-effective-agents) — context on when retrieval-augmented context fits into a larger system
+- [Anthropic Cookbook](https://github.com/anthropics/anthropic-cookbook) — includes retrieval and embedding-based search recipes using Claude
+
+🧑‍💼 **PM view:** If coding the examples isn't practical for your role, see [`exercises/pm_track.md`](exercises/pm_track.md) for a no-code exercise covering the same decisions (chunking strategy, retrieval-quality triage, and when to add hybrid search or re-ranking) using a worked scenario.
+
+---
+
 ## Hands-on
 
 Continue to:
 - 📊 [Presentation slides](presentation/slides.md) — a workshop-ready deck covering this module
 - 💻 [Code examples](examples/) — a basic RAG pipeline, chunking strategy comparison, and hybrid search
-- ✏️ [Exercises](exercises/) — practice problems with starter code and solutions
+- ✏️ [Exercises](exercises/) — practice problems with starter code and solutions (including a non-coding [PM track](exercises/pm_track.md))

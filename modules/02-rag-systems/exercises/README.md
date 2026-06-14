@@ -3,6 +3,10 @@
 Complete these after reading the module README and reviewing the examples.
 Solutions are in [`solutions/`](solutions/) — try each exercise yourself first.
 
+> **Not coding this module?** [`pm_track.md`](pm_track.md) covers the same
+> decisions (chunking strategy, retrieval-quality triage, and when to add
+> hybrid search or re-ranking) as a written exercise — no code required.
+
 ## Exercise 1: Tune chunk size and `k`
 
 **File:** [`exercise_01_chunk_tuning.py`](exercise_01_chunk_tuning.py)

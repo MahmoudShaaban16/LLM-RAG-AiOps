@@ -10,6 +10,7 @@
 - [4. Regression testing for prompts](#4-regression-testing-for-prompts)
 - [5. Metrics that matter](#5-metrics-that-matter)
 - [6. Common failure modes](#6-common-failure-modes)
+- [Tools & Resources](#tools--resources)
 - [Hands-on](#hands-on)
 
 ---
@@ -159,9 +160,28 @@ No single number captures "is this LLM feature good." Track several together:
 
 ---
 
+## Tools & Resources
+
+🧑‍💻 **Engineer view — SDKs & libraries**
+
+| Tool / Library | What it's for |
+|---|---|
+| [Anthropic Python SDK](https://github.com/anthropics/anthropic-sdk-python) | `client.messages.create(..., tools=[...])` — used to build the LLM-as-judge pattern in this module's examples |
+| [promptfoo](https://www.promptfoo.dev/) | Open-source CLI/framework for building eval datasets and running prompt regression tests |
+| [LangSmith](https://docs.smith.langchain.com/) | Tracing and evaluation platform for tracking eval runs and comparing prompt/model versions over time |
+
+📚 **Further reading**
+
+- [Anthropic — Develop test cases for evaluation](https://docs.anthropic.com/en/docs/build-with-claude/develop-tests) — guidance on building eval datasets and grading approaches
+- [Anthropic — Tool use (function calling)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use) — reference for forcing structured judge output via `tool_choice`
+
+🧑‍💼 **PM view:** If coding the examples isn't practical for your role, see [`exercises/pm_track.md`](exercises/pm_track.md) for a no-code exercise covering the same decisions (what makes a good eval set, how to read LLM-as-judge scores, and when a prompt change is safe to ship) using a worked scenario.
+
+---
+
 ## Hands-on
 
 Continue to:
 - 📊 [Presentation slides](presentation/slides.md) — a workshop-ready deck covering this module
 - 💻 [Code examples](examples/) — runnable scripts demonstrating an eval dataset, LLM-as-judge, and a prompt regression test
-- ✏️ [Exercises](exercises/) — practice problems with starter code and solutions
+- ✏️ [Exercises](exercises/) — practice problems with starter code and solutions (including a non-coding [PM track](exercises/pm_track.md))

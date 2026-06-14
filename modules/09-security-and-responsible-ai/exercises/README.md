@@ -3,6 +3,10 @@
 Complete these after reading the module README and reviewing the examples.
 Solutions are in [`solutions/`](solutions/) — try each exercise yourself first.
 
+> **Not coding this module?** [`pm_track.md`](pm_track.md) covers the same
+> decisions (prompt injection risk, guardrail design, and human-in-the-loop
+> approval) as a written exercise — no code required.
+
 ## Exercise 1: Write a guardrail function
 
 **File:** [`exercise_01_guardrail.py`](exercise_01_guardrail.py)

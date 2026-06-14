@@ -3,6 +3,11 @@
 Complete these after reading the module README and reviewing the examples.
 Solutions are in [`solutions/`](solutions/) — try each exercise yourself first.
 
+> **Not coding this module?** [`pm_track.md`](pm_track.md) covers the same
+> decisions (what makes a good eval set, how to read LLM-as-judge scores, and
+> when a prompt change is safe to ship) as a written exercise — no code
+> required.
+
 ## Exercise 1: Extend the evaluation dataset
 
 **File:** [`exercise_01_extend_dataset.py`](exercise_01_extend_dataset.py)

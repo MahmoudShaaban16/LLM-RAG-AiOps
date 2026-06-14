@@ -10,6 +10,7 @@
 - [4. Responsible AI considerations](#4-responsible-ai-considerations)
 - [5. Governance](#5-governance)
 - [6. Common failure modes](#6-common-failure-modes)
+- [Tools & Resources](#tools--resources)
 - [Hands-on](#hands-on)
 
 ---
@@ -165,9 +166,28 @@ As LLM features move from prototype to production, governance answers: *who deci
 
 ---
 
+## Tools & Resources
+
+🧑‍💻 **Engineer view — SDKs & libraries**
+
+| Tool / Library | What it's for |
+|---|---|
+| [OWASP Top 10 for LLM Applications](https://owasp.org/www-project-top-10-for-large-language-model-applications/) | Industry-standard checklist of LLM-specific vulnerabilities (prompt injection, insecure output handling, excessive agency, etc.) |
+| [NVIDIA NeMo Guardrails](https://github.com/NVIDIA/NeMo-Guardrails) | Open-source framework for adding programmable input/output guardrails and topical rails to LLM apps |
+| [Anthropic Python SDK](https://github.com/anthropics/anthropic-sdk-python) | The `tools` / `tool_use` surface this module's guardrail examples intercept before execution |
+
+📚 **Further reading**
+
+- [Anthropic — Usage policy](https://www.anthropic.com/legal/aup) — defines acceptable and prohibited uses, a baseline for responsible-AI scoping
+- [Anthropic Trust Center](https://trust.anthropic.com/) — data handling, retention, and security practices referenced in Section 2
+
+🧑‍💼 **PM view:** If coding the examples isn't practical for your role, see [`exercises/pm_track.md`](exercises/pm_track.md) for a no-code exercise covering the same decisions (prompt injection risk, guardrail design, and human-in-the-loop approval) using a worked scenario.
+
+---
+
 ## Hands-on
 
 Continue to:
 - 📊 [Presentation slides](presentation/slides.md) — a workshop-ready deck covering this module
 - 💻 [Code examples](examples/) — a prompt injection demo with mitigation, and a tool-access guardrail pattern
-- ✏️ [Exercises](exercises/) — practice problems with starter code and solutions
+- ✏️ [Exercises](exercises/) — practice problems with starter code and solutions (including a non-coding [PM track](exercises/pm_track.md))

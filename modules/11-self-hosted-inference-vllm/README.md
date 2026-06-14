@@ -10,6 +10,7 @@
 - [4. Deploying vLLM: the OpenAI-compatible server](#4-deploying-vllm-the-openai-compatible-server)
 - [5. A decision framework: API, self-hosted, or both?](#5-a-decision-framework-api-self-hosted-or-both)
 - [6. Common failure modes](#6-common-failure-modes)
+- [Tools & Resources](#tools--resources)
 - [Hands-on](#hands-on)
 
 ---
@@ -140,11 +141,30 @@ If most answers are "no," a managed API (as used throughout Modules 01-10) remai
 
 ---
 
+## Tools & Resources
+
+🧑‍💻 **Engineer view — SDKs & libraries**
+
+| Tool / Library | What it's for |
+|---|---|
+| [vLLM](https://github.com/vllm-project/vllm) / [vLLM docs](https://docs.vllm.ai/) | The inference/serving engine covered in this module — installation, server flags, supported models |
+| [Hugging Face Hub](https://huggingface.co/models) | Where the open-weight models vLLM serves (Llama, Mistral, Qwen, etc.) are hosted and versioned |
+| [Anthropic API docs](https://docs.anthropic.com/) | Reference for the managed-API side of the comparison in Section 2 |
+
+📚 **Further reading**
+
+- [vLLM documentation](https://docs.vllm.ai/) — server configuration, quantization, and deployment guides
+- [Anthropic — Pricing](https://www.anthropic.com/pricing) — usage-based cost figures for the API side of the breakeven analysis
+
+🧑‍💼 **PM view:** If coding the examples isn't practical for your role, see [`exercises/pm_track.md`](exercises/pm_track.md) for a no-code exercise covering the same decisions (API vs. self-hosted, cost/ops tradeoffs, and when a hybrid approach makes sense) using a worked scenario.
+
+---
+
 ## Hands-on
 
 Continue to:
 - 📊 [Presentation slides](presentation/slides.md) — a workshop-ready deck covering this module
 - 💻 [Code examples](examples/) — starting a vLLM server, querying it via an OpenAI-compatible client, and a self-hosted vs. API cost comparison
-- ✏️ [Exercises](exercises/) — practice problems with starter code and solutions
+- ✏️ [Exercises](exercises/) — practice problems with starter code and solutions (including a non-coding [PM track](exercises/pm_track.md))
 
 > **Note:** Running vLLM itself requires a CUDA-capable GPU and is out of scope to run inside this repo's examples. The examples focus on the *client-side* patterns and the *cost/decision* reasoning, which don't require a GPU.

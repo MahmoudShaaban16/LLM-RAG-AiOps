@@ -10,6 +10,7 @@
 - [4. Planning patterns: ReAct and plan-and-execute](#4-planning-patterns-react-and-plan-and-execute)
 - [5. Should I build an agent?](#5-should-i-build-an-agent)
 - [6. Common failure modes](#6-common-failure-modes)
+- [Tools & Resources](#tools--resources)
 - [Hands-on](#hands-on)
 
 ---
@@ -180,11 +181,30 @@ If a fixed sequence of steps (a traditional script, or a single well-crafted pro
 
 ---
 
+## Tools & Resources
+
+🧑‍💻 **Engineer view — SDKs & libraries**
+
+| Tool / Library | What it's for |
+|---|---|
+| [Anthropic Python SDK](https://github.com/anthropics/anthropic-sdk-python) | `client.messages.create(..., tools=[...])` — the API surface used in this module's examples |
+| [Anthropic Cookbook](https://github.com/anthropics/anthropic-cookbook) | Worked examples of tool use, agents, and evaluation patterns |
+| [LangChain](https://python.langchain.com/) / [LangGraph](https://langchain-ai.github.io/langgraph/) | Higher-level agent/orchestration frameworks — useful once hand-rolled loops get unwieldy |
+
+📚 **Further reading**
+
+- [Anthropic — Tool use (function calling)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use) — official reference for tool schemas, `tool_choice`, and `tool_result` blocks
+- [Anthropic — Building effective agents](https://www.anthropic.com/research/building-effective-agents) — design principles behind ReAct vs. plan-and-execute and "should I build an agent?"
+
+🧑‍💼 **PM view:** If coding the examples isn't practical for your role, see [`exercises/pm_track.md`](exercises/pm_track.md) for a no-code exercise covering the same decisions (tool design, planning pattern, and agent-vs-no-agent) using a worked scenario.
+
+---
+
 ## Hands-on
 
 Continue to:
 - 📊 [Presentation slides](presentation/slides.md) — a workshop-ready deck covering this module
 - 💻 [Code examples](examples/) — a single tool call, then a full manual agentic loop with multiple tools
-- ✏️ [Exercises](exercises/) — practice problems with starter code and solutions
+- ✏️ [Exercises](exercises/) — practice problems with starter code and solutions (including a non-coding [PM track](exercises/pm_track.md))
 
 Next module: [Module 04 — Multi-Agent Systems](../04-multi-agent-systems/README.md), which builds on this loop to coordinate multiple agents.
